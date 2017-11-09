@@ -1,5 +1,16 @@
+body {
+    height: 100%;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
 section {
-    padding-bottom: 300px;
+    padding-bottom: 200px;
+}
+
+a {
+  color: #666666;
+  text-decoration: none;
 }
 
 /*.canvas {

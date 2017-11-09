@@ -19,17 +19,17 @@ TODO: PUT A PROPER REFERENCE
             <h1>Hello World!</h1>
         </div>
         <section>
-            <p>
-                Draw a color
-            </p>
+            <h2>
+                <a id='hello_world' href='#hello_world'>Draw a color</a>
+            </h2>
 
             <div class="editor_wrap" data="shaders/hello_world.frag" id="glsl_editor1"></div>
         </section>
 
         <section>
-            <p>
-                Show my face
-            </p>
+            <h2>
+                <a id='webcam_01' href='#webcam_01'>Show my face</a>
+            </h2>
 
             <div class="editor_wrap" data="shaders/webcam_01.frag" data-camera id="glsl_editor2"></div>
         </section>
@@ -42,6 +42,7 @@ TODO: PUT A PROPER REFERENCE
                 canvas_size: 250,
                 canvas_follow: true,
                 canvas_float: 'right',
+                theme: 'monokai',
                 tooltips: true,
                 exportIcon: true,
                 useWebcam: editors[i].hasAttribute("data-camera")
