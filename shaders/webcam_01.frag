@@ -8,5 +8,7 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
 
+    //How would we flip the image horizontally?
+
     gl_FragColor = texture2D(u_webcam, st);
 }
