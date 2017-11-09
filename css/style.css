@@ -33,7 +33,19 @@ a {
 }
 
 .ge_canvas_container {
-    float: right;
+    float: right !important;
+    position: absolute !important;
+    z-index: 10001;
+}
+
+.ge_editor {
+    min-height: 300px !important;
+}
+
+.editor_wrap {
     position: relative;
-    z-index: 1;
+}
+
+.CodeMirror-wrap {
+    min-height: 300px !important;
 }
