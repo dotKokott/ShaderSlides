@@ -9,6 +9,8 @@ TODO: PUT A PROPER REFERENCE
 
         <title>Hello World!</title>
 
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
         <link type="text/css" rel="stylesheet" href="https://dotkokott.github.io/glslEditor/build/glslEditor.css">
         <script type="application/javascript" src="https://dotkokott.github.io/glslEditor/build/glslEditor.js"></script>
 
@@ -31,7 +33,7 @@ TODO: PUT A PROPER REFERENCE
                 <a id='webcam_01' href='#webcam_01'>Show my face</a>
             </h2>
 
-            <div class="editor_wrap" data="shaders/webcam_01.frag" data-camera id="glsl_editor2"></div>
+            <div id="glsl_editor2" class="editor_wrap" data="shaders/webcam_01.frag" data-solution="shaders/webcam_01_solution.frag" data-camera></div>
         </section>
     </body>
     <script type="text/javascript">
@@ -51,6 +53,39 @@ TODO: PUT A PROPER REFERENCE
             if (editors[i].hasAttribute("data")) {
                 var srcFile = editors[i].getAttribute("data");
                 editor.open(srcFile);
+            }
+
+            if(editors[i].hasAttribute("data-solution")) {
+                var link = document.createElement('a');
+                link.classList.add('solution_link');
+                link.textContent = "Show / Hide solution";
+                editors[i].appendChild(link);
+
+                var sol_div = document.createElement('div');
+                sol_div.classList.add('editor_wrap');
+                sol_div.setAttribute('id', editors[i].id + '_solution');
+                $(editors[i]).after(sol_div);
+
+                var solutionEditor = new GlslEditor(sol_div, {
+                    canvas_size: 250,
+                    canvas_follow: true,
+                    canvas_float: 'right',
+                    theme: 'monokai',
+                    tooltips: true,
+                    exportIcon: true,
+                    useWebcam: editors[i].hasAttribute("data-camera")
+                });
+
+                $(link).click(function () {
+                    $(sol_div).toggle('slow', function() {
+                        //TODO probably should just respawn everything to avoid sizing stuff
+                        var canv = $(this).find('.ge_canvas').width(250).height(250);
+                    });
+                });
+
+                solutionEditor.open(editors[i].getAttribute("data-solution"));
+
+                $(sol_div).hide();
             }
         }
     </script>
