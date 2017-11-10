@@ -14,36 +14,48 @@
     </head>
     <body>
         <div id="header">
-            <h1>Hello World!</h1>
+            <h1>Hallo Hallo to Shader Bamboo</h1>
         </div>
-        <section class="editor_section">
+        <section class="section_slides">
             <h2>
-                <a id='hello_world' href='#hello_world'>Draw a color</a>
+                <a id='hello_world' href='#hello_world'>Table of contents</a>
             </h2>
 
-            <div id=glsl_editor1 class="editor_wrap"
-                                 data-size=400
-                                 data="shaders/hello_world.frag">
-            </div>
+            <ul id="slide_list">
+            </ul>
         </section>
 
-        <section class="editor_section">
-            <h2>
-                <a id='webcam_01' href='#webcam_01'>Show my face</a>
-            </h2>
-
-            <div id="glsl_editor2" class="editor_wrap"
-                                   data-size=400
-                                   data-webcam
-                                   data="shaders/webcam_01.frag"
-                                   data-solution="shaders/webcam_01_solution.frag">
-            </div>
-        </section>
     </body>
 
-    <script type="application/javascript" src="js/main.js"></script>
+    <!-- <script type="application/javascript" src="js/main.js"></script> -->
 
     <script type="text/javascript">
         //CUSTOM CODE
+
+
+        function nextSlide(index) {
+            var url = "slides/" + (index).toLocaleString(undefined, {minimumIntegerDigits: 2}) + "_slide.html";
+            console.log(url);
+            $.ajax(url).done(function(file) {
+                slides.push(file);
+
+                var title = $(file).find('h1:first').text();
+
+                $('<a />', {
+                    text: title,
+                    href: url
+                    //click: function() {}
+                }).wrap('<li />').parent().appendTo('#slide_list');
+
+                nextSlide(++index);
+            }).fail(function() {
+                console.log("Found all slides: " + index);
+            })
+        }
+
+        var slides = [];
+
+
+        nextSlide(0);
     </script>
 </html>

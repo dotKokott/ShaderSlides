@@ -6,13 +6,13 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 * ~~ExportIcon doesnt work anymore after style fix~~
   * ~~Lets just add the wanted export links ourselves~~
 * ~~Solution canvas not positioned right~~
-* Not sure where syntax error console logs are coming from, everything working
+* ~~Not sure where syntax error console logs are coming from, everything working~~
 
 ## TODO
 * ☻♥☺ STYLING ☻♥☺
- * Sections/Editors not intersecting
-* Section paging
-* Declaration of Slides
+  * Sections/Editors not intersecting
+* ~~Section paging~~
+* ~~Declaration of Slides~~
 * Auto-save code + clear save?
 * ~~Tab-able code for solution~~
 * Reference book of shaders clearly
