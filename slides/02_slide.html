@@ -22,28 +22,53 @@
             </div>
         </div>
         <div id="header">
-            <h1>THIRD SLIDE</h1>
+            <h1>Introduction</h1>
         </div>
+
         <section class="editor_section">
             <h2>
-                <a id='hello_world' href='#hello_world'>Draw a color</a>
+                <a id='hello_world' href='#hello_world'>So whats different?</a>
             </h2>
 
-            <div id=glsl_editor1 class="editor_wrap"
-                                 data-size=400
-                                 data="../shaders/hello_world.frag"></div>
+            <img src="../images/02_pixel.PNG" style="
+                float: right;
+                margin-right:250px;
+                margin-top: -80px;" width="200px"></img>
+
+            <p>
+                We are describing the image from the perspective of every individual pixel!
+            </p>
+
+            <p>
+                Practically:
+                <ul>
+                    <li>We only know the position of the pixel</li>
+                    <li>And the dimensions of the canvas</li>
+                </ul>
+            </p>
+
+
+
         </section>
 
         <section class="editor_section">
             <h2>
-                <a id='webcam_01' href='#webcam_01'>Show my face</a>
+                <a id='hello_world' href='#hello_world'>Draw a color</a>
             </h2>
+            <p>
+                The most basic pixel shader
+                <ul>
+                    <li>The main method returns a <b>color</b></li>
+                    <li>By setting the gl_FragColor variable in the end</li>
+                </ul>
+            </p>
+            <div id=glsl_editor1 class="editor_wrap"
+                                 data-size=200
+                                 data="../shaders/hello_world.frag"></div>
 
-            <div id="glsl_editor2" class="editor_wrap"
-                                   data-size=400
-                                   data-webcam
-                                   data="../shaders/webcam_01.frag"
-                                   data-solution="../shaders/webcam_01_solution.frag"></div>
+            <p>
+                🢂 The whole image is red because every pixel says <q>I'm red</q>
+            </p>
         </section>
     </body>
 
