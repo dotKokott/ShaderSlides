@@ -5,6 +5,7 @@ function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
         canvas_size: size,
         canvas_follow: true,
         canvas_float: 'right',
+        canvas_resizable: true,
         theme: 'monokai',
         tooltips: true,
         exportIcon: false,
