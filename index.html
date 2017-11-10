@@ -11,8 +11,8 @@ TODO: PUT A PROPER REFERENCE
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-        <link type="text/css" rel="stylesheet" href="https://dotkokott.github.io/glslEditor/build/glslEditor.css">
-        <script type="application/javascript" src="https://dotkokott.github.io/glslEditor/build/glslEditor.js"></script>
+        <link type="text/css" rel="stylesheet" href="lib/glslEditor.css">
+        <script type="application/javascript" src="lib/glslEditor.js"></script>        
 
         <link type="text/css" rel="stylesheet" href="css/style.css">
     </head>
@@ -36,57 +36,10 @@ TODO: PUT A PROPER REFERENCE
             <div id="glsl_editor2" class="editor_wrap" data="shaders/webcam_01.frag" data-solution="shaders/webcam_01_solution.frag" data-camera></div>
         </section>
     </body>
+
+    <script type="application/javascript" src="js/main.js"></script>
+
     <script type="text/javascript">
-        var editors = document.querySelectorAll(".editor_wrap");
-    	for(var i = 0; i < editors.length; i++){
 
-            var editor = new GlslEditor(editors[i], {
-                canvas_size: 250,
-                canvas_follow: true,
-                canvas_float: 'right',
-                theme: 'monokai',
-                tooltips: true,
-                exportIcon: true,
-                useWebcam: editors[i].hasAttribute("data-camera")
-            });
-
-            if (editors[i].hasAttribute("data")) {
-                var srcFile = editors[i].getAttribute("data");
-                editor.open(srcFile);
-            }
-
-            if(editors[i].hasAttribute("data-solution")) {
-                var link = document.createElement('a');
-                link.classList.add('solution_link');
-                link.textContent = "Show / Hide solution";
-                editors[i].appendChild(link);
-
-                var sol_div = document.createElement('div');
-                sol_div.classList.add('editor_wrap');
-                sol_div.setAttribute('id', editors[i].id + '_solution');
-                $(editors[i]).after(sol_div);
-
-                var solutionEditor = new GlslEditor(sol_div, {
-                    canvas_size: 250,
-                    canvas_follow: true,
-                    canvas_float: 'right',
-                    theme: 'monokai',
-                    tooltips: true,
-                    exportIcon: true,
-                    useWebcam: editors[i].hasAttribute("data-camera")
-                });
-
-                $(link).click(function () {
-                    $(sol_div).toggle('slow', function() {
-                        //TODO probably should just respawn everything to avoid sizing stuff
-                        var canv = $(this).find('.ge_canvas').width(250).height(250);
-                    });
-                });
-
-                solutionEditor.open(editors[i].getAttribute("data-solution"));
-
-                $(sol_div).hide();
-            }
-        }
     </script>
 </html>
