@@ -49,3 +49,13 @@ a {
 .CodeMirror-wrap {
     min-height: 300px !important;
 }
+
+u {
+    background-color: light-gray;
+}
+
+a[target="_blank"] {
+    color: blue;
+    font-size: 1rem;
+    text-decoration: underline;
+}
