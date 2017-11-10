@@ -108,7 +108,7 @@ $(document).ready(function() {
     }).hover(function() {
         fadeFocus($('section'), $(this));
     });
-
+    
     var editors = document.querySelectorAll(".editor_wrap");
     for(var i = 0; i < editors.length; i++) {
         editors[i].setAttribute('id', 'editor_' + i);

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Introduction</h1>
+        </div>
+
+        <section class="editor_section">
+            <h2>
+                <a id='hello_world' href='#hello_world'>So whats different?</a>
+            </h2>
+
+            <img src="../images/02_pixel.PNG" style="
+                float: right;
+                margin-right:250px;
+                margin-top: -80px;" width="200px"></img>
+
+            <p>
+                We are describing the image from the perspective of every individual pixel!
+            </p>
+
+            <p>
+                Practically:
+                <ul>
+                    <li>We only know the position of the pixel</li>
+                    <li>And the dimensions of the canvas</li>
+                </ul>
+            </p>
+
+
+
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='hello_world' href='#hello_world'>Draw a color</a>
+            </h2>
+            <p>
+                The most basic pixel shader
+                <ul>
+                    <li>The main method returns a <b>color</b></li>
+                    <li>By setting the gl_FragColor variable in the end</li>
+                </ul>
+            </p>
+            <div class="editor_wrap"
+                 data-size=200
+                 data="../shaders/hello_world.frag"></div>
+
+            <p>
+                🢂 The whole image is red because every pixel says <q>I'm red</q>
+            </p>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>

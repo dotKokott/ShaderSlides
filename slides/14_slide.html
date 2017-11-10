@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Introduction</h1>
+        </div>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a id='speed' href='#speed'>Now at x100000 speed</a>
+            </h2>
+
+            <img src="../images/cpu-and-gpu.jpg" style="float: right; margin-top: -80px; margin-right: 10px" width="416px"></img>
+
+            <p>
+                Your graphics card is doing the same thing
+                <ul>
+                    <li>For every visible pixel on the screen</li>
+                    <li>Call the main() method to decide the pixel color</li>
+                    <li>Inside the main() method you decide the rule</li>
+                </ul>
+
+                🢂 Now the advantage of this is that your graphics card can do this for every pixel at the same time!!
+            </p>
+
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a id='translate' href='#translate'>Translating the paper rules</a>
+            </h2>
+
+            <p>
+                Lets split the canvas into a white and black half ◨
+            </p>
+            <p>
+                Translation:
+                <ul>
+                    <li>gl_FragCoord.xy &nbsp; ➡ position on the grid</li>
+                    <li>gl_FragColor.rgba ➡ color of the pixel</li>
+                </ul>
+            </p>
+
+            <div class="editor_wrap"
+                 data-size=200
+                 data="../shaders/paper_translate.frag"
+                 data-solution="../shaders/paper_translate_solution.frag"></div>
+
+             <p>
+                 🢂 Hint: Get used to express numbers always with a <b>decimal point</b> (1.0, 0.0 ...)
+             </p>
+            <p>
+                🢂 Hint: <a href="http://www.shaderific.com/glsl-functions/" target="_blank">Here is a handy list of GLSL functions you can use!</a>
+            </p>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a id='translate' href='#translate'>One more technicality</a>
+            </h2>
+
+            <p>
+                The pixel coordinate is based on the canvas size which is a bit unhandy for multiple reasons:
+                <ul>
+                    <li>You do not want to rewrite the shader for <b>every</b> screen / canvas size</li>
+                    <li>Keeping all values normalized (between <b>0.0</b> and <b>1.0</b>) allows you to combine values more easily and express relationships</li>
+                    <li>To normalize our coordinates we just have to divide them by our canvas size (= <b>resolution</b>)!</li>
+                </ul>
+            </p>
+
+            <p>
+                🢂 To get the resolution we refer to the <b>u_resolution uniform</b> variable
+            </p>
+
+            <p>
+                Lets rewrite the canvas splitting example with normalized coordinates:
+            </p>
+
+            <div class="editor_wrap"
+                 data-size=200
+                 data="../shaders/normalization.frag"
+                 data-solution="../shaders/normalization_solution.frag"></div>
+
+             <p>
+                 🢂 Extra bonus: We can now use <b>0.5</b> whenever we mean '<b>half</b>' without knowing the actual dimensions of the canvas
+             </p>
+             <p>
+                 🢂 Hint: To "normalize" the aspect ratio as well: <em>position.x *= u_resolution.x / u_resolution.y</em>
+             </p>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>
