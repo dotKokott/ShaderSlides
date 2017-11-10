@@ -13,6 +13,8 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 ## TODO
 * ☻♥☺ STYLING ☻♥☺
   * Sections/Editors not intersecting
+  * Separator lines / borders / section backgrounds?
+  * How to display text / bullet list nice?
 * ~~Section paging~~
 * ~~Declaration of Slides~~
 * Auto-save code + clear save?
@@ -25,3 +27,12 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 ## Low priority
 * Load solution automatic if file + "_solution_" exists
 * ~~Highlight sections by lowering opacity of other sections~~
+
+
+
+## Resources
+http://pixelshaders.com/
+http://thebookofshaders.com/
+http://www.iquilezles.org/www/index.htm
+http://www.iquilezles.org/apps/graphtoy/ (Visualizing GLSL functions)
+http://tobyschachman.com/Shadershop/ (Construct functions visually)
