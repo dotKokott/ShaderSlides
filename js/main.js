@@ -3,7 +3,7 @@ const DEFAULT_EDITOR_SIZE = 250;
 function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
     var editor = new GlslEditor(selector, {
         canvas_size: size,
-        canvas_follow: false,
+        canvas_follow: true,
         canvas_float: 'right',
         theme: 'monokai',
         tooltips: true,
