@@ -17,6 +17,7 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 * ~~Declaration of Slides~~
 * Auto-save code + clear save?
   * Added local storage functions, need UI for it(?)
+  * Maybe 🗘 symbol next to section header for reset original  
 * ~~Tab-able code for solution~~
 * Reference book of shaders clearly
 * Add useful export links from exporticon
