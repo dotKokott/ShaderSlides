@@ -16,20 +16,28 @@
         <div id="header">
             <h1>Hello World!</h1>
         </div>
-        <section>
+        <section class="editor_section">
             <h2>
                 <a id='hello_world' href='#hello_world'>Draw a color</a>
             </h2>
 
-            <div class="editor_wrap" data-size=400 data="shaders/hello_world.frag" id="glsl_editor1"></div>
+            <div id=glsl_editor1 class="editor_wrap"
+                                 data-size=400
+                                 data="shaders/hello_world.frag">
+            </div>
         </section>
 
-        <section>
+        <section class="editor_section">
             <h2>
                 <a id='webcam_01' href='#webcam_01'>Show my face</a>
             </h2>
 
-            <div id="glsl_editor2" class="editor_wrap" data-webcam data="shaders/webcam_01.frag" data-solution="shaders/webcam_01_solution.frag"></div>
+            <div id="glsl_editor2" class="editor_wrap"
+                                   data-size=400
+                                   data-webcam
+                                   data="shaders/webcam_01.frag"
+                                   data-solution="shaders/webcam_01_solution.frag">
+            </div>
         </section>
     </body>
 

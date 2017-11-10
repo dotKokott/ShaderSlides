@@ -1,26 +1,42 @@
 body {
     height: 100%;
-    padding: 50px;
+    /*padding: 50px;*/
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+/* Header / PAGE TITLE */
+h1 {
+    padding-left: 50px;
+}
+
 section {
-    padding-bottom: 100px;
+    padding: 50px;
 }
 
-a {
-  color: #666666;
-  text-decoration: none;
+/* Section anchors */
+section > h2 > a  {
+    color: #666666;
+    text-decoration: none;
 }
 
-/*.ge_export_icon {
-    left: 40px;
+/* Solutions */
+.solution_wrap {
+    transition: all .5s;
+    transition-timing-function: ease-out;
+    transform: translate3d(-150%, 0, 0) scale3d(1, 1, 1);
+}
 
-}*/
+.fade_out {
+    transition: all .5s;
+    transition-timing-function: ease-out;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+}
 
 .solution_link {
     cursor: pointer;
+    color: #666666;
 }
+/* --------- */
 
 .codeAndCanvas {
     height:auto;
@@ -48,17 +64,5 @@ a {
 }
 
 .editor_wrap {
-    position: relative;    
-}
-
-.solution_wrap {
-    transition: all .5s;
-    transition-timing-function: ease-out;
-    transform: translate3d(-150%, 0, 0) scale3d(1, 1, 1);
-}
-
-.fade_out {
-    transition: all .5s;
-    transition-timing-function: ease-out;
-    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    position: relative;
 }
