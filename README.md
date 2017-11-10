@@ -23,10 +23,13 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 * ~~Tab-able code for solution~~
 * Reference book of shaders clearly
 * Add useful export links from exporticon
+* Pause shader section that is not focused
+* Automatic id + section anchor, manual is super annoying
 
 ## Low priority
 * Load solution automatic if file + "_solution_" exists
 * ~~Highlight sections by lowering opacity of other sections~~
+
 
 
 
