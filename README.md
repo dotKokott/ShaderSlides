@@ -1,6 +1,8 @@
 # ShaderSlides
 Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 
+# https://dotkokott.github.io/ShaderSlides/
+
 ## BUGS
 * ~~Styling horizontal scrollbar bug~~
 * ~~ExportIcon doesnt work anymore after style fix~~
@@ -21,4 +23,4 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 
 ## Low priority
 * Load solution automatic if file + "_solution_" exists
-* Highlight sections by lowering opacity of other sections
+* ~~Highlight sections by lowering opacity of other sections~~
