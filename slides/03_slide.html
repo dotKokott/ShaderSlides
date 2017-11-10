@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Introduction</h1>
+        </div>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a id='hello_world' href='#hello_world'>Paper shaders!</a>
+            </h2>
+
+            <img src="../images/grid_paper.jpg" style="float: right; margin-top: -80px; margin-right: 10px" width="500px"></img>
+
+            <p>
+                Lets simulate a shader on <b>grid paper</b>
+            </p>
+
+            <p>
+                What rules can we come up with to generate some kind of pattern?
+                <ul>
+                    <li>Using <b>only</b> the cells <b>X</b> and <b>Y</b> position!</li>
+                    <li>How would we make</li>
+                    <ul>
+                        <li>A checkerboard pattern? ▞ ▩</li>
+                        <li>Half black, half white? ◧</li>
+                        <li>Rectangle? 	▣</li>
+                        <li>..▲..◉..◒..</li>
+                    </ul>
+                </ul>
+
+                🢂 Lets draw a coordinate system by numbering the columns and rows
+                <br>
+                <br>
+                🢂 Basically an analog screen with a very low resolution!
+            </p>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>

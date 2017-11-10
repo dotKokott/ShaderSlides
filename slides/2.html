@@ -1,33 +1,26 @@
+<!-- HUGE THANKS TO THEBOOKOFSHADERS
+TODO: PUT A PROPER REFERENCE
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
 
-        <title>Painting by Numbers</title>
-
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
-        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://dotkokott.github.io/glslEditor/build/glslEditor.css">
+        <script type="application/javascript" src="https://dotkokott.github.io/glslEditor/build/glslEditor.js"></script>
 
         <link type="text/css" rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-        <div id="navigation">
-            <div id="nav_left">
-                <a href="">◀</a>
-            </div>
-            <div id="nav_right">
-                <a href="">▶</a>
-            </div>
-        </div>
         <div id="header">
             <h1>Building blocks</h1>
         </div>
-
-        <section class="editor_section">
+        <section>
             <h2>
-                <a id='variables' href='#variables'>Variables &amp; Structures</a>
+                <a id='hello_world' href='#hello_world'>Uniforms &amp; Varying</a>
             </h2>
             <div class="editor_wrap" data="../shaders/02_variables_1.frag" id="glsl_editor1"></div>
             <ul>
@@ -39,9 +32,9 @@
               </li>
             </ul>
         </section>
-        <section class="editor_section">
+        <section>
             <h2>
-                <a id='uniforms' href='#uniforms'>Uniforms &amp; Varying</a>
+                <a id='hello_world' href='#hello_world'>Uniforms &amp; Varying</a>
             </h2>
 
             <div class="editor_wrap" data="../shaders/02_variables_2.frag" id="glsl_editor1"></div>
@@ -68,24 +61,6 @@
                That's the reasoning for passing screen resolution as uniform – <b>u_resolution</b>
             </p>
         </section>
-        <section class="editor_section">
-            <h2>
-                <a id='glfragcoord' href='#glfragcoord'>gl_FragCoord</a>
-            </h2>
-            <p>
-                The most basic pixel shader
-                <ul>
-                    <li>The main method returns a <b>color</b></li>
-                    <li>By setting the gl_FragColor variable in the end</li>
-                </ul>
-            </p>
-            <div id=glsl_editor1 class="editor_wrap"
-                                 data-size=200
-                                 data="../shaders/hello_world.frag"></div>
-
-            <div class="editor_wrap" data="../shaders/02_variables_3.frag" id="glsl_editor1"></div>
-            
-        </section>
 
         <section>
           <h3>Useful links</h3>
@@ -99,10 +74,57 @@
           </ul>
         </section>
     </body>
-
-    <script type="application/javascript" src="../js/main.js"></script>
-
     <script type="text/javascript">
-        //CUSTOM CODE
+        var editors = document.querySelectorAll(".editor_wrap");
+    	for(var i = 0; i < editors.length; i++){
+
+            var editor = new GlslEditor(editors[i], {
+                canvas_size: 250,
+                canvas_follow: true,
+                canvas_float: 'right',
+                theme: 'monokai',
+                tooltips: true,
+                exportIcon: true,
+                useWebcam: editors[i].hasAttribute("data-camera")
+            });
+
+            if (editors[i].hasAttribute("data")) {
+                var srcFile = editors[i].getAttribute("data");
+                editor.open(srcFile);
+            }
+
+            if(editors[i].hasAttribute("data-solution")) {
+                var link = document.createElement('a');
+                link.classList.add('solution_link');
+                link.textContent = "Show / Hide solution";
+                editors[i].appendChild(link);
+
+                var sol_div = document.createElement('div');
+                sol_div.classList.add('editor_wrap');
+                sol_div.setAttribute('id', editors[i].id + '_solution');
+                $(editors[i]).after(sol_div);
+
+                var solutionEditor = new GlslEditor(sol_div, {
+                    canvas_size: 250,
+                    canvas_follow: true,
+                    canvas_float: 'right',
+                    theme: 'monokai',
+                    tooltips: true,
+                    exportIcon: true,
+                    useWebcam: editors[i].hasAttribute("data-camera")
+                });
+
+                $(link).click(function () {
+                    $(sol_div).toggle('slow', function() {
+                        //TODO probably should just respawn everything to avoid sizing stuff
+                        var canv = $(this).find('.ge_canvas').width(250).height(250);
+                    });
+                });
+
+                solutionEditor.open(editors[i].getAttribute("data-solution"));
+
+                $(sol_div).hide();
+            }
+        }
     </script>
 </html>

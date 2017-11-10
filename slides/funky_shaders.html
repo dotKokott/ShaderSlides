@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+
+        <!-- Just in case we need to inject something later -->
+        <script type="application/javascript" src="../js/init.js"></script>
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left"><a href="">◀</a></div>
+            <div id="nav_right"><a href="">▶</a></div>
+        </div>
+
+        <div id="header">
+            <h1>Funky shaders (For reference)</h1>
+        </div>
+
+        <section class="editor_section">
+            <h2>
+                <a id='webcam_01' href='#webcam_01'>Color wave shift</a>
+            </h2>
+
+            <div id="glsl_editor1" class="editor_wrap"
+                                   data-size=200
+                                   data-webcam
+                                   data="../shaders/ref/color_shift.frag"></div>
+               <ul>
+                 <li>
+                     <a target="_blank" href="http://pixelshaders.com/examples/sampling-color.html">Sampling: Colors</a>
+                 </li>
+               </ul>
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='webcam_02' href='#webcam_02'>Color wave shift</a>
+            </h2>
+
+            <div id="glsl_editor2" class="editor_wrap"
+                                   data-size=200
+                                   data-webcam
+                                   data="../shaders/ref/wave_warp.frag"></div>
+               <ul>
+                 <li>
+                     <a target="_blank" href="http://pixelshaders.com/examples/sampling-distortion.html">Sampling: Distortion</a>
+                 </li>
+               </ul>
+
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='webcam_03' href='#webcam_03'>Displacement</a>
+            </h2>
+
+            <div id="glsl_editor3" class="editor_wrap"
+                                   data-size=200
+                                   data-webcam
+                                   data="../shaders/ref/displacement.frag"></div>
+               <ul>
+                 <li>
+                     <a target="_blank" href="http://pixelshaders.com/examples/sampling-displacement.html">Sampling: Displacement</a>
+                 </li>
+               </ul>
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='webcam_04' href='#webcam_04'>Patterns</a>
+            </h2>
+
+            <div id="glsl_editor4" class="editor_wrap"
+                                   data-size=200
+                                   data-webcam
+                                   data="../shaders/ref/patterns.frag"></div>
+               <ul>
+                 <li>
+                     <a target="_blank" href="http://pixelshaders.com/examples/patterns.html">Case study: Patterns</a>
+                 </li>
+               </ul>
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a>Pinch and Bulge</a>
+            </h2>
+
+            <div class="editor_wrap"
+                   data-size=200
+                   data-webcam
+                   data="../shaders/ref/pinch_bulge.frag"></div>
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='webcam_04' href='#webcam_04'>Kaleidoscope</a>
+            </h2>
+
+            <div class="editor_wrap"
+                   data-size=200
+                   data-webcam
+                   data="../shaders/ref/kaleidoscope.frag"></div>
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='webcam_05' href='#webcam_05'>Quasicrystal</a>
+            </h2>
+
+            <div id="glsl_editor5" class="editor_wrap"
+                                   data-size=200
+                                   data-webcam
+                                   data="../shaders/ref/quasicrystal.frag"></div>
+           <ul>
+             <li>
+                 <a target="_blank" href="http://pixelshaders.com/examples/quasicrystal.html">Quasycrystal case study</a>
+             </li>
+           </ul>
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='webcam_06' href='#webcam_06'>Noise</a>
+            </h2>
+
+            <div id="glsl_editor5" class="editor_wrap"
+                                   data-size=200
+                                   data-webcam
+                                   data="../shaders/ref/noise.frag"></div>
+           <ul>
+             <li>
+                 <a target="_blank" href="http://pixelshaders.com/examples/noise.html">Noise construction</a>
+             </li>
+           </ul>
+        </section>
+
+
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>
