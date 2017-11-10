@@ -1,21 +1,81 @@
 body {
     height: 100%;
-    padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-section {
-    padding-bottom: 200px;
+/* Navigation */
+#navigation {
+    position: fixed;
+    display:none;
+    width: 100%;
+    height: 100%;
+    top: 15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+
+    pointer-events: none;
 }
 
-a {
-  color: #666666;
-  text-decoration: none;
+#navigation > div > a {
+    pointer-events: all;
+    text-decoration: none;
+    color: #666666;
+    font-size: 2em;
+}
+
+#navigation > div > a:hover {
+    color: #333333;
+}
+
+#nav_left {
+    position: fixed;
+    /*top: 25px;*/
+    left: 2%;
+
+}
+
+#nav_right {
+    position: fixed;
+    right: 2%;
+}
+
+/* Header / PAGE TITLE */
+h1 {
+    padding-left: 50px;
+}
+
+section {
+    padding: 50px;
+    z-index: 1;
+}
+
+/* Section anchors */
+section > h2 > a  {
+    color: #666666;
+    text-decoration: none;
+    z-index: 1;
+}
+
+/* Solutions */
+.solution_wrap {
+    transition: all .5s;
+    transition-timing-function: ease-out;
+    transform: translate3d(-150%, 0, 0) scale3d(1, 1, 1);
+}
+
+.fade_out {
+    transition: all .5s;
+    transition-timing-function: ease-out;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
 }
 
 .solution_link {
     cursor: pointer;
+    color: #666666;
 }
+/* --------- */
 
 .codeAndCanvas {
     height:auto;
@@ -46,9 +106,9 @@ a {
     position: relative;
 }
 
-.CodeMirror-wrap {
-    min-height: 300px !important;
-}
+// .CodeMirror-wrap {
+//     min-height: 300px !important;
+// }
 
 u {
     background-color: light-gray;
