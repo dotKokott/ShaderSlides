@@ -110,6 +110,10 @@ $(document).ready(function() {
 
     var editors = document.querySelectorAll(".editor_wrap");
     for(var i = 0; i < editors.length; i++) {
+        editors[i].setAttribute('id', 'editor_' + i);
+        var anchor = $(editors[i]).parent().find('a:first');
+        anchor.attr('id', 'anchor_' + i);
+        anchor.attr('href', '#anchor_' + i);
 
         var hasWebcam = editors[i].hasAttribute("data-webcam");
         var shader = editors[i].getAttribute("data");
