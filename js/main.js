@@ -1,11 +1,13 @@
+const DEFAULT_EDITOR_SIZE = 250;
+
 function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
     var editor = new GlslEditor(selector, {
         canvas_size: size,
-        canvas_follow: true,
+        canvas_follow: false,
         canvas_float: 'right',
         theme: 'monokai',
         tooltips: true,
-        exportIcon: true,
+        exportIcon: false,
         useWebcam: useWebcam
     });
 
@@ -15,7 +17,6 @@ function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
 
     if(solutionSource) {
         var id = selector.id + '_solution';
-
 
         var link = document.createElement('a');
         link.classList.add('solution_link');
@@ -30,10 +31,8 @@ function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
         $(selector).after(sol_div);
 
         var solutionEditor = loadEditor(sol_div, size, useWebcam, solutionSource);
-        // $(sol_div).fadeToggle('fast');
 
         $(link).click(function () {
-            // $(sol_div).hide();
             $(sol_div).toggleClass('fade_out')
         });
     }
@@ -47,13 +46,11 @@ $(document).ready(function() {
 
         var hasWebcam = editors[i].hasAttribute("data-webcam");
         var shader = editors[i].getAttribute("data");
+        var size = editors[i].getAttribute("data-size");
 
         //Null when empty
         var solution = editors[i].getAttribute("data-solution");
 
-        loadEditor(editors[i], 250, hasWebcam, shader, solution);
+        loadEditor(editors[i], size || DEFAULT_EDITOR_SIZE, hasWebcam, shader, solution);
     }
-
-
-
 });

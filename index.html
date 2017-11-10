@@ -1,7 +1,3 @@
-<!-- HUGE THANKS TO THEBOOKOFSHADERS
-TODO: PUT A PROPER REFERENCE
--->
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +8,7 @@ TODO: PUT A PROPER REFERENCE
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
         <link type="text/css" rel="stylesheet" href="lib/glslEditor.css">
-        <script type="application/javascript" src="lib/glslEditor.js"></script>        
+        <script type="application/javascript" src="lib/glslEditor.js"></script>
 
         <link type="text/css" rel="stylesheet" href="css/style.css">
     </head>
@@ -25,7 +21,7 @@ TODO: PUT A PROPER REFERENCE
                 <a id='hello_world' href='#hello_world'>Draw a color</a>
             </h2>
 
-            <div class="editor_wrap" data="shaders/hello_world.frag" id="glsl_editor1"></div>
+            <div class="editor_wrap" data-size=400 data="shaders/hello_world.frag" id="glsl_editor1"></div>
         </section>
 
         <section>
@@ -33,13 +29,13 @@ TODO: PUT A PROPER REFERENCE
                 <a id='webcam_01' href='#webcam_01'>Show my face</a>
             </h2>
 
-            <div id="glsl_editor2" class="editor_wrap" data="shaders/webcam_01.frag" data-solution="shaders/webcam_01_solution.frag" data-camera></div>
+            <div id="glsl_editor2" class="editor_wrap" data-webcam data="shaders/webcam_01.frag" data-solution="shaders/webcam_01_solution.frag"></div>
         </section>
     </body>
 
     <script type="application/javascript" src="js/main.js"></script>
 
     <script type="text/javascript">
-
+        //CUSTOM CODE
     </script>
 </html>

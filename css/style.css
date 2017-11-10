@@ -13,6 +13,11 @@ a {
   text-decoration: none;
 }
 
+/*.ge_export_icon {
+    left: 40px;
+
+}*/
+
 .solution_link {
     cursor: pointer;
 }
@@ -43,11 +48,7 @@ a {
 }
 
 .editor_wrap {
-    position: relative;
-}
-
-.CodeMirror-wrap {
-    min-height: 300px !important;
+    position: relative;    
 }
 
 .solution_wrap {
