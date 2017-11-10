@@ -22,28 +22,70 @@
             </div>
         </div>
         <div id="header">
-            <h1>THIRD SLIDE</h1>
+            <h1>Building blocks</h1>
         </div>
         <section class="editor_section">
             <h2>
-                <a id='hello_world' href='#hello_world'>Draw a color</a>
+                <a id='variables' href='#variables'>Variables &amp; Structures</a>
             </h2>
-
-            <div id=glsl_editor1 class="editor_wrap"
-                                 data-size=400
-                                 data="../shaders/hello_world.frag"></div>
+            <div class="editor_wrap" data="../shaders/02_variables_1.frag" id="glsl_editor1"></div>
+            <ul>
+              <li>
+                  <a target="_blank" href="http://www.shaderific.com/glsl-types">Variable type reference</a>
+              </li>
+              <li>
+                <a target="_blank" href="http://www.shaderific.com/glsl-functions/">Functions reference</a>
+              </li>
+            </ul>
         </section>
-
         <section class="editor_section">
             <h2>
-                <a id='webcam_01' href='#webcam_01'>Show my face</a>
+                <a id='uniforms' href='#uniforms'>Uniforms &amp; Varying</a>
             </h2>
 
-            <div id="glsl_editor2" class="editor_wrap"
-                                   data-size=400
-                                   data-webcam
-                                   data="../shaders/webcam_01.frag"
-                                   data-solution="../shaders/webcam_01_solution.frag"></div>
+            <div class="editor_wrap" data="../shaders/02_variables_2.frag" id="glsl_editor1"></div>
+            <ul>
+                <li>
+                    <h3>Uniforms – have same value for each pixel (fragment)</h3>
+                    <p>Example: 
+                       Screen resolution, mouse coordinates only defined once for the whole program and therefore same for each pixel.
+                       Same for time.
+                       By agreement, in this environment all uniform variables have <b>u_</b> prefix – <b>u_time</b>, <b>u_mouse</b>.
+                    </p>
+                </li>
+                <li>
+                    <h3>Varying – have different value for each pixel (fragment)</h3>
+                </li>
+                <li>
+                    <h3>Default (system) inputs/outputs – <u>gl_FragColor</u>, <u>gl_FragCoord</u></h3>
+                </li>
+            </ul>
+
+            <p>
+               By default uniform values are not normalized! 
+               Ex: <b>u_mouse</b> can have values ranging from 0 to 1440 for instance.
+               That's the reasoning for passing screen resolution as uniform – <b>u_resolution</b>
+            </p>
+        </section>
+        <section class="editor_section">
+            <h2>
+                <a id='glfragcoord' href='#glfragcoord'>gl_FragCoord</a>
+            </h2>
+
+            <div class="editor_wrap" data="../shaders/02_variables_3.frag" id="glsl_editor1"></div>
+            
+        </section>
+
+        <section>
+          <h3>Useful links</h3>
+          <ul>
+            <li>
+                <a href="http://tobyschachman.com/Shadershop/" target="_blank">http://tobyschachman.com/Shadershop/</a>
+            </li>
+            <li>
+                <a href="http://tobyschachman.com/Shadershop/" target="_blank">http://tobyschachman.com/Shadershop/</a>
+            </li>
+          </ul>
         </section>
     </body>
 

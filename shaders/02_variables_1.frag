@@ -10,7 +10,7 @@ void main() {
     //  .xy,  .xyz,  .xyzw
     //  .yx,  .xxx,  .wyzx
     //  ...
-    vec2 V = vec2(0.5, 0.5);
+    vec2 V = vec2(a, 0.5);
     vec2 V2 = vec2(0.1);
 
     vec3 V3 = vec3(0.25, 0.5, 0.75);
