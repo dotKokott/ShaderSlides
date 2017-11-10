@@ -14,9 +14,12 @@ body {
     right: 0;
     bottom: 0;
     z-index: 0;
+
+    pointer-events: none;
 }
 
 #navigation > div > a {
+    pointer-events: all;
     text-decoration: none;
     color: #666666;
     font-size: 2em;
@@ -45,12 +48,14 @@ h1 {
 
 section {
     padding: 50px;
+    z-index: 1;
 }
 
 /* Section anchors */
 section > h2 > a  {
     color: #666666;
     text-decoration: none;
+    z-index: 1;
 }
 
 /* Solutions */
