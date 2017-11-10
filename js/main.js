@@ -40,8 +40,12 @@ function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
     return editor;
 }
 
+function getCurrentSlideName() {
+    return location.pathname.split('/').slice(-1)[0];
+}
+
 function getMyIndex() {
-    var file = location.pathname.split('/').slice(-1)[0];
+    var file = getCurrentSlideName();
     return parseInt(file.substring(0, 2));
 }
 
@@ -49,10 +53,26 @@ function getSlideUrl(index) {
     return index.toLocaleString(undefined, {minimumIntegerDigits: 2}) + "_slide.html";
 }
 
+function autoSave(editor_id, code) {
+    localStorage.setItem(getCurrentSlideName() + editor_id, code);
+}
+
+function loadLocalCode(editor_id) {
+    return localStorage.getItem(getCurrentSlideName() + editor_id)
+}
+
+function deleteLocalCode(editor_id) {
+    return localStorage.removeItem(getCurrentSlideName() + editor_id);
+}
+
+function deleteAllLocalCode() {
+    localStorage.clear();
+}
+
 $(document).ready(function() {
     //Navigation
     //If not template file
-    if(location.pathname.split('/').slice(-1)[0].indexOf('template') === -1) {
+    if(getCurrentSlideName().indexOf('template') === -1) {
         var myIndex = getMyIndex();
         var previous = getSlideUrl(myIndex - 1);
         var next = getSlideUrl(myIndex + 1);
