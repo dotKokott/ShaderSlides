@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Introduction</h1>
+        </div>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Lets do this in shader style!</a>
+            </h2>
+
+            <p>
+                First lets rewrite the previous example a bit more conscise utilizing the <b>vector structures</b>
+                <ul>
+                    <li>Use <b>vec2</b> for X / Y pairs</li>
+                    <li>Use sizzling (<b>.xy</b>) to access values</li>
+                </ul>
+
+                <div class="editor_wrap"
+                     data-size=200
+                     data="../shaders/paper_translate_solution.frag"
+                     data-solution="../shaders/vec_and_sizzle.frag"></div>
+            </p>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Number mashing</a>
+            </h2>
+
+            <p>
+                Lets tickle some of these variables and try to get other shapes
+
+                <ul>
+                    <li>Mix X and Y coordinates together?</li>
+                    <li>Different colors?</li>
+                </ul>
+
+                <div class="editor_wrap"
+                     data-size=300
+                     data="../shaders/vec_and_sizzle.frag"></div>
+            </p>
+            <p>
+                🢂 Hint: We can replace the if condition with a call to <a href="https://thebookofshaders.com/glossary/?search=step" target="_blank">step(float edge, float x)</a>
+            </p>
+            <p>
+                🢂 Hint: In-built math operations include sin(), cos(), sqrt()...
+            </p>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>

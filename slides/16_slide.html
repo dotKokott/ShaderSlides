@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Introduction</h1>
+        </div>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Unleash the beast &#20861;</a>
+            </h2>
+
+            <p>
+                Lets take a look at some in-built shader operations and how to use them
+                <ul>
+                    <li>sin(), cos(), ... <em>Geometry & Waves, ja!</em> </li>
+                    <li>min(), max(), mod(), fract(), floor(), ... <em>Number games</em></li>
+                    <li><a href="https://thebookofshaders.com/glossary/?search=step" target="_blank">step(float edge, float x)</a></li>
+                    <li><a href="https://thebookofshaders.com/glossary/?search=smoothstep" target="_blank">smoothstep(float edge, float x)</a></li>
+                    <li><a href="https://thebookofshaders.com/glossary/?search=mix" target="_blank">mix(float x, float y, float a)</a></li>
+                </ul>
+            </p>
+            <div class="editor_wrap"
+                 data-size=200
+                 data="../shaders/built_in.frag"></div>
+            <p>
+                🢂 Hint: All these operations allow you to use them on a whole vector instead of individual float values
+            </p>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>
