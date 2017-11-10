@@ -72,19 +72,23 @@
             <h2>
                 <a id='glfragcoord' href='#glfragcoord'>gl_FragCoord</a>
             </h2>
-            <p>
-                The most basic pixel shader
-                <ul>
-                    <li>The main method returns a <b>color</b></li>
-                    <li>By setting the gl_FragColor variable in the end</li>
-                </ul>
-            </p>
-            <div id=glsl_editor1 class="editor_wrap"
-                                 data-size=200
-                                 data="../shaders/hello_world.frag"></div>
-
             <div class="editor_wrap" data="../shaders/02_variables_3.frag" id="glsl_editor1"></div>
-            
+            <p>
+                 <b>gl_FragCoord</b> is vec2 that describes fragment position on the screen space.
+                 Values go from 0 to screen width and from 0 to screen height.
+            </p>
+            <h3>Experiments to try:</h3>
+            <ul>
+                <li>
+                    Combining u_time or u_mouse and gl_FragCoord
+                </li>
+                <li>
+                    Applying math functions to gl_FragCoord
+                </li>
+                <li>
+                    Drawing a "grid" of squares
+                </li>
+            </ul>
         </section>
 
         <section>
