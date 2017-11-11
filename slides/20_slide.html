@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Unit circle</h1>
+        </div>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>From the unit circle to chaos</a>
+            </h2>
+
+            <p>
+                The <b>Unit Circle</b> is a circle with a radius of <b>1.0</b> and positioned at the (0, 0) of the coordinate system
+            </p>
+
+            <iframe src="https://www.mathsisfun.com/algebra/icircle-triangle.html" scrolling="no" style="width:442px; height:542px; overflow:hidden; margin:auto; display:block; border: none;"></iframe>
+
+
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Sine Cosine and friends</a>
+            </h2>
+            <p>
+                &#129154; What happens if we use <b>u_time</b> here?
+            </p>
+            <p>Sine(x)</p>
+            <div class="simpleFunction"
+                 data="y = sin(x);"></div>
+            <p>Cos(x)</p>
+             <div class="simpleFunction"
+                  data="y = cos(x);"></div>
+            <p>Tan(x)</p>
+              <div class="simpleFunction"
+                   data="y = tan(x);"></div>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Number games</a>
+            </h2>
+
+            <div class="simpleFunction"
+                 data="
+ y = mod(x,0.5); // return x modulo of 0.5
+ //y = fract(x); // return only the fraction part of a number
+ //y = ceil(x);  // nearest integer that is greater than or equal to x
+ //y = floor(x); // nearest integer less than or equal to x
+ //y = sign(x);  // extract the sign of x
+ //y = abs(x);   // return the absolute value of x
+ //y = clamp(x,0.0,1.0); // constrain x to lie between 0.0 and 1.0
+ //y = min(0.0,x);   // return the lesser of x and 0.0
+ //y = max(0.0,x);   // return the greater of x and 0.0
+                 "></div>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Sine and Cosine in practice</a>
+            </h2>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/sin_cos_circle.frag"></div>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>
