@@ -5,8 +5,8 @@ body {
     height: 100%;
     /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
     font: 20px 'Roboto', sans-serif;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
     padding-bottom: 100px;
     background-color: #efefef;
 }
@@ -117,6 +117,11 @@ section > img {
     margin-left: auto;
     margin-right: auto;
     max-width: 700px;
+    margin: 15px;
+}
+
+.ge_canvas {
+    margin: 10px;
 }
 
 .ge_canvas_container {

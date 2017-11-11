@@ -12,25 +12,24 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 
 ## TODO
 * ☻♥☺ STYLING ☻♥☺
-  * Sections/Editors not intersecting
-  * Separator lines / borders / section backgrounds?
-  * How to display text / bullet list nice?
+  * ~~Sections/Editors not intersecting~~
+  * ~~Separator lines / borders / section backgrounds?~~
+  * ~~How to display text / bullet list nice?~~
 * ~~Section paging~~
 * ~~Declaration of Slides~~
+* ~~Tab-able code for solution~~
+* ~~Automatic id + section anchor, manual is super annoying~~
+
 * Auto-save code + clear save?
   * Added local storage functions, need UI for it(?)
   * Maybe 🗘 symbol next to section header for reset original  
-* ~~Tab-able code for solution~~
-* Reference book of shaders clearly
-* Add useful export links from exporticon
-* Pause shader section that is not focused
-* ~~Automatic id + section anchor, manual is super annoying~~
+* Add useful export links from exporticon  
+
 
 ## Low priority
+* Pause shader section that is not focused
 * Load solution automatic if file + "_solution_" exists
 * ~~Highlight sections by lowering opacity of other sections~~
-
-
 
 
 ## Resources

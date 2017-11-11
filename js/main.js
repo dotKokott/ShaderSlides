@@ -97,18 +97,18 @@ $(document).ready(function() {
     }
 
     var fadeFocus = function(list, elem) {
-        list.not(elem).fadeTo('fast', 0.4);
+        list.not(elem).fadeTo('fast', 0.5);
         elem.fadeTo('fast', 1);
     }
 
 
-    $('section:not(:first)').fadeTo('fast', 0.3);
+    $('section:not(:first)').fadeTo('fast', 0.5);
     $('section').click(function() {
         fadeFocus($('section'), $(this));
     }).hover(function() {
         fadeFocus($('section'), $(this));
     });
-    
+
     var editors = document.querySelectorAll(".editor_wrap");
     for(var i = 0; i < editors.length; i++) {
         editors[i].setAttribute('id', 'editor_' + i);
