@@ -28,13 +28,13 @@
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
-                <a id='speed' href='#speed'>Now at x100000 speed</a>
+                <a id='speed' href='#speed'>Now everybody at once</a>
             </h2>
 
             <img src="../images/cpu-and-gpu.jpg" style="float: right; margin-top: -80px; margin-right: 10px" width="416px"></img>
 
             <p>
-                Your graphics card is doing the same thing
+                Your graphics card in your computer is doing the same thing
                 <ul>
                     <li>For every visible pixel on the screen</li>
                     <li>Call the main() method to decide the pixel color</li>
@@ -48,6 +48,24 @@
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
+                <a>Basic syntax</a>
+            </h2>
+
+            <p>
+                Lets look at some first building blocks.
+            </p>
+
+            <div class="editor_wrap"
+                 data-size=200
+                 data="../shaders/basic_syntax.frag"></div>
+
+             <p>
+                 🢂 Here is a <a href="../slides/reference.html" target="_blank">reference page</a> as a handy summary of the syntax and conventions involved
+             </p>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
                 <a id='translate' href='#translate'>Translating the paper rules</a>
             </h2>
 
@@ -55,42 +73,62 @@
                 Lets split the canvas into a white and black half ◨
             </p>
             <p>
-                Translation:
                 <ul>
-                    <li>gl_FragCoord.xy &nbsp; ➡ position on the grid</li>
-                    <li>gl_FragColor.rgba ➡ color of the pixel</li>
+                    <li>X / Y on the grid  ➡ gl_FragCoord.<b>x</b> / gl_FragCoord.<b>y</b></li>
+                    <li>color of the pixel ➡ gl_FragColor.rgba</li>
                 </ul>
             </p>
 
             <div class="editor_wrap"
                  data-size=200
-                 data="../shaders/paper_translate.frag"
-                 data-solution="../shaders/paper_translate_solution.frag"></div>
+                 data="../shaders/translate.frag"
+                 data-solution="../shaders/translate_solution.frag"></div>
 
              <p>
                  🢂 Hint: Get used to express numbers always with a <b>decimal point</b> (1.0, 0.0 ...)
              </p>
             <p>
-                🢂 Hint: <a href="http://www.shaderific.com/glsl-functions/" target="_blank">Here is a handy list of GLSL functions you can use!</a>
+                🢂 <a href="http://www.shaderific.com/glsl-functions/" target="_blank">Here is a handy list of all GLSL functions you can use!</a>
             </p>
         </section>
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
-                <a id='translate' href='#translate'>One more technicality</a>
+                <a>Basic syntax II: Vectors</a>
             </h2>
 
             <p>
-                The pixel coordinate is based on the canvas size which is a bit unhandy for multiple reasons:
                 <ul>
-                    <li>You do not want to rewrite the shader for <b>every</b> screen / canvas size</li>
-                    <li>Keeping all values normalized (between <b>0.0</b> and <b>1.0</b>) allows you to combine values more easily and express relationships</li>
+                    <li>The most integral datatype is the <a target ="_blank" href="https://thebookofshaders.com/glossary/?search=vec2">vector</a> structure.</li>
+                    <li>It is used to access and store groups of values e.g. <b>positions (x, y, z)</b> or <b>colors (r, g, b, a)</b></li>
+                </ul>
+            </p>
+
+            <div class="editor_wrap"
+                 data-size=200
+                 data="../shaders/basic_syntax.frag"></div>
+
+             <p>
+                 🢂 Here is a <a href="../slides/reference.html" target="_blank">reference page</a> as a handy summary of the syntax and conventions involved
+             </p>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a id='translate' href='#translate'>Normalization</a>
+            </h2>
+
+            <p>
+                The pixel coordinates are based on the canvas size which is inconvenient:
+                <ul>
+                    <li>We do not want to change the shader for <b>every</b> screen / canvas size</li>
+                    <li>Keeping all values normalized (between <b>0.0</b> and <b>1.0</b>) allows us to relate values more easily with each other</li>
                     <li>To normalize our coordinates we just have to divide them by our canvas size (= <b>resolution</b>)!</li>
                 </ul>
             </p>
 
             <p>
-                🢂 To get the resolution we refer to the <b>u_resolution uniform</b> variable
+                🢂 To get the resolution we access the <em>uniform vec2 u_resolution</em> variable
             </p>
 
             <p>
@@ -103,7 +141,7 @@
                  data-solution="../shaders/normalization_solution.frag"></div>
 
              <p>
-                 🢂 Extra bonus: We can now use <b>0.5</b> whenever we mean '<b>half</b>' without knowing the actual dimensions of the canvas
+                 🢂 Bonus: We can now express relationships in percentages (<b>0.5 for 'half'</b>) without knowing the actual dimensions of the canvas
              </p>
         </section>
     </body>
