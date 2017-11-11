@@ -30,7 +30,7 @@ Shader slide / editor for Shader workshop based on thebookofshaders.com editor!
 * Pause shader section that is not focused
 * Load solution automatic if file + "_solution_" exists
 * ~~Highlight sections by lowering opacity of other sections~~
-
+* HACK: Added window.saveOnServer in editor.js file
 
 ## Resources
 http://pixelshaders.com/

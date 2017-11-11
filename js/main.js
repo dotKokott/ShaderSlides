@@ -5,12 +5,28 @@ function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
         canvas_size: size,
         canvas_follow: true,
         canvas_float: 'right',
-        canvas_resizable: true,
+        canvas_resizable: false,
         theme: 'monokai',
         tooltips: true,
         exportIcon: false,
         useWebcam: useWebcam
     });
+
+    var saveIcon = document.createElement("div");
+    saveIcon.innerHTML = "&#128190;"
+    saveIcon.classList.add('save_icon');
+
+    selector.append(saveIcon);
+
+    $(saveIcon).click(function() {
+        window.saveOnServer(editor, function(event) {
+             prompt('Use this url to share your code', 'http://thebookofshaders.com/edit.php?log=' + event.name);
+        })
+    })
+
+
+
+    // $(saveIcon).insertAfter($(selector));
 
     if(fragSource) {
         editor.open(fragSource);

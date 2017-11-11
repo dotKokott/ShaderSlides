@@ -154,3 +154,7 @@ a[target="_blank"] {
     /*font-size: 1rem;*/
     text-decoration: none;
 }
+
+.save_icon {
+    cursor: pointer;
+}
