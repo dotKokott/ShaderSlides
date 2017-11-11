@@ -4,10 +4,16 @@ uniform vec2 u_resolution;
 
 void main() {
 	vec2 position = gl_FragCoord.xy / u_resolution.xy;
-	vec4 color;
-	color.a = 1.0;
-    color.r = mod(position.x, .3);
-	color.b = mod(1.0 - position.x, .3);
+	vec3 color;
 
-    gl_FragColor = color;
+    float steps = 10.;
+
+    float x = floor(position.x * steps);
+	float y = floor(position.y * steps);
+
+    float brightness = mod(x + y, 2.);
+
+	color = vec3(brightness);
+
+    gl_FragColor = vec4(color, 1.);
 }
