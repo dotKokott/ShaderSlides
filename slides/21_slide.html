@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Randomness</h1>
+        </div>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>How to simulate random</a>
+            </h2>
+
+            <p>
+                It is often desirable to have random number generator when generating images.
+                <ul>
+                    <li>In shaders we have to take care of that ourselves</li>
+                    <li>Essentially we are interested in an output that is random <em>enough</em></li>
+                </ul>
+
+                <div class="simpleFunction"
+                     data="y = fract(sin(x)*1.0);"></div>
+            </p>
+
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Random distributions</a>
+            </h2>
+
+            <p>
+                Essentially we are "faking" randomness but what is random anyways?
+                <ul>
+                    <li>We are interested in <b>non-predictable values</b> (high entropy)</li>
+                    <li>Deterministic: Same input will always be same output</li>
+                    <li>The same in most other programming languages as well they, they just use a <b>seed</b></li>
+                    <li>Deterministic random actually beneficial, reproducable results</li>
+                </ul>
+
+                Lets say we want to generate a random 2D image:
+            </p>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/random_2d.frag"
+            data-solution="../shaders/random_2d_solution.frag"></div>
+
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Shaping the random</a>
+            </h2>
+
+            <p>
+                Lets use try to influence this outcome by
+                <ul>
+                    <li>u_time or u_mouse</li>
+                    <li>Floor, ...?</li>
+                </ul>
+            </p>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/random_2d_with_uniform.frag"
+            ></div>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Moving artifacts</a>
+            </h2>
+
+            <p>
+                Can we combine this with some shapes or <b>for loops</b>?
+            </p>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/random_2d_with_moving.frag"
+            ></div>
+        </section>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Sine and Cosine in practice</a>
+            </h2>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/sin_cos_circle.frag"></div>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>
