@@ -6,7 +6,10 @@ void main() {
     
     float transition;
     
-    transition = smoothstep(0.25, 0.5, st.y);
+    
+    transition = step(0.5, st.y);
+    // transition = smoothstep(0.25, 0.5, st.y);
+
     
     vec3 color = vec3(transition);
     gl_FragColor = vec4(color, 1.0);

@@ -3,11 +3,11 @@ uniform vec2 u_resolution;
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
+
+    vec2 center = vec2(0.0, 0.0);
     
-    float transition;
+    float dist = distance(st, center);
+    vec3 color = vec3(dist);
     
-    transition = smoothstep(0.25, 0.5, st.y);
-    
-    vec3 color = vec3(transition);
     gl_FragColor = vec4(color, 1.0);
 }

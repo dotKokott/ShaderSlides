@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Shapes and sights</h1>
+        </div>
+
+        <section class="editor_section">
+            <h2>
+                <a id='circle' href='#circle'>Circle</a>
+            </h2>
+            <p>
+                To express whether each specific pixel belongs to a circluar shape, let's use the distance between each pixel and some arbitrary center of the circle. In following example it is in <b>(0,0)</b> corner.
+                You can see how gradient visualizes distance for each pixel and then after it grows larger than 0.25, color is just white.
+
+                Let's making it into a circle:
+                <ul>
+                    <li>Try shifting coordinate system center <b>st</b> to center of the canvas</li>
+                    <li>Try applying step functions to set a certain limit on distance from the circle center</li>
+                </ul>
+            </p>
+            <div class="editor_wrap" data="../shaders/circle_1.frag" data-solution="../shaders/circle_1_solution.frag" id="glsl_editor1"></div>
+        </section>
+
+        <section class="editor_section">
+            <h2>
+                <a id='circle' href='#circle'>More circles</a>
+            </h2>
+            <p>
+                In thi example put circle into a re-usable function!
+                <ul>
+                    <li>Try affecting coordinate that is passed into each circle function when it's being drawn</li>
+                    <li>Try mixing colors differently</li>
+                </ul>
+            </p>
+            <div class="editor_wrap" data="../shaders/circle_2.frag" id="glsl_editor1"></div>
+            <p>
+                Play with this toolset: try applying transformation of coordinate system from previous part, scaling, math functions and see how it comes together!
+            </p>
+        </section>
+
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>

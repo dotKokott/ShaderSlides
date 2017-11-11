@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Shapes and sights in TIME</h1>
+        </div>
+
+        <section class="editor_section">
+            <h2>
+                <a id='animation' href='#animation'>Moving stuff around</a>
+            </h2>
+            <p>
+                Let's pass aditional uniform variable – <b>u_time</b>
+                It is a cornerstone for animation (think of flowing lava textures in games for example) and as time is a shared value between all pixels, so that makes a perfect candidate for a uniform!
+
+                <ul>
+                    <li>Try offseting coordinate system center <b>st</b> by adding time</li>
+                    <li>Try ofsseting circle center by adding time</li>
+                    <li>What if position of each pixel also affected how much time has passed for it specifically since shader program started being executed? Imagine each pixel position having it's personal clock.</li>
+                </ul>
+                <p>
+                    <div>TIP: Time makes a good candidate for sin() and cos() functions, to make looping animations!</div>
+                    <div>TIP: To make modifications to <b>u_time</b> you have to assign it to another variable and then affecting that variable!</div>
+                </p>
+
+            </p>
+            <div class="editor_wrap" data="../shaders/time_1.frag" id="glsl_editor1"></div>
+
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>
