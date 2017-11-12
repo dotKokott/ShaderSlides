@@ -9,7 +9,8 @@ function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
         theme: 'monokai',
         tooltips: true,
         exportIcon: false,
-        useWebcam: useWebcam
+        useWebcam: useWebcam,
+        imgs: ['https://upload.wikimedia.org/wikipedia/commons/b/b5/800x600_Wallpaper_Blue_Sky.png']
     });
 
     var saveIcon = document.createElement("div");
