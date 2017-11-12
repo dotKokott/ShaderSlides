@@ -149,7 +149,7 @@ $(document).ready(function() {
             sfList[i].setAttribute('id', 'graph_' + i);
             var anchor = $(sfList[i]).parent().find('a:first');
             anchor.attr('id', 'anchorgraph_' + i);
-            anchor.attr('href', '#anchorgraph_' + i);            
+            anchor.attr('href', '#anchorgraph_' + i);
 
             var srcFile = sfList[i].getAttribute("data");
 
