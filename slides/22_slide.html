@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Painting by Numbers</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <link type="text/css" rel="stylesheet" href="../lib/glslEditor.css">
+        <script type="application/javascript" src="../lib/glslEditor.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="navigation">
+            <div id="nav_left">
+                <a href="">◀</a>
+            </div>
+            <div id="nav_right">
+                <a href="">▶</a>
+            </div>
+        </div>
+        <div id="header">
+            <h1>Whats this noise?</h1>
+        </div>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Random is too random</a>
+            </h2>
+
+            <p>
+                To create chaotic but pleasant images we often do not want to use random.
+                <ul>
+                    <li>"Pure" randomness looks unnatural</li>
+                    <li>We want something unpredictable, yet organic looking</li>
+                    <li>Thats the noise!</li>
+                </ul>
+
+                <div class="simpleFunction"
+                     data="
+float i = floor(x);  // integer
+float f = fract(x);  // fraction
+y = rand(i); //rand() is described in the previous slide
+//y = mix(rand(i), rand(i + 1.0), f);
+//y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
+"></div>
+            </p>
+
+            <p>
+                &#129154; We want to smoothly interpolate between the random peaks
+            </p>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Using noise</a>
+            </h2>
+
+            <p>
+                Lets play with this, can we use this noise to
+                <ul>
+                    <li>Animate a shape</li>
+                    <li>Change the coordinate system</li>
+                    <li>Combine multiple noise controlled parameters</li>
+                </ul>
+            </p>
+            <p>
+                &#129154; Useful to get a feel for how to scale or speed up the noise
+            </p>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/noise_1d.frag" data-solution="../shaders/noise_1d_solution.frag"></div>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>2D noise</a>
+            </h2>
+
+            <p>
+                Interpolates between four corners instead of 2 points
+                <ul>
+                    <li>Experiment!</li>
+                </ul>
+            </p>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/noise_2d.frag"></div>
+        </section>
+
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Smoother noise</a>
+            </h2>
+
+            <p>
+                The previous noise is called <b>value</b> noise because it is based on interpolations between random <b>values</b>
+                <br>
+                <br>
+                It still looks pretty blocky, luckily Perlin did not stop!
+                <p>
+                    Here is a comparison of value noise and <b>gradient</b> noise:
+                </p>
+            </p>
+
+            <iframe width="100%" height="360" frameborder="0" src="https://www.shadertoy.com/embed/XdXGW8?gui=true&t=10&paused=true&muted=false"></iframe>
+
+            <!-- <div class="editor_wrap" data-size=200 data="../shaders/random_2d_with_moving.frag"
+            ></div> -->
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Rolls Royce of Noise: Simplex Noise</a>
+            </h2>
+
+            <p>
+                The latest masterpiece of Perlin
+                <ul>
+                    <li>Cheaper to compute</li>
+                    <li>No artifacts</li>
+                    <li>Continous gradients</li>
+                </ul>
+            </p>
+
+            <div class="editor_wrap" data-size=200 data="../shaders/noise_simplex.frag"></div>
+
+            <p>
+                &#129154; Every noise implementation looks and behaves a bit differently and can be better for different situations
+                <br>
+                &#129154; <a target="_blank" href="http://thebookofshaders.com/11/">Here is a more detailed breakdown how they are constructed</a>
+            </p>
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../js/main.js"></script>
+
+    <script type="text/javascript">
+        //CUSTOM CODE
+    </script>
+</html>
