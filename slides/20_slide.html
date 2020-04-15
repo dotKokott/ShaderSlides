@@ -22,67 +22,30 @@
             </div>
         </div>
         <div id="header">
-            <h1>Unit circle</h1>
+            <h1>Shapes and sights in TIME</h1>
         </div>
 
-
-        <section class="editor_section" style="padding-bottom: 50px">
+        <section class="editor_section">
             <h2>
-                <a>From the unit circle to chaos</a>
-            </h2>
-
-            <p>
-                The <b>Unit Circle</b> is a circle with a radius of <b>1.0</b> and positioned at the (0, 0) of the coordinate system
-            </p>
-
-            <iframe src="https://www.mathsisfun.com/algebra/icircle-triangle.html" scrolling="no" style="width:442px; height:542px; overflow:hidden; margin:auto; display:block; border: none;"></iframe>
-
-
-        </section>
-
-        <section class="editor_section" style="padding-bottom: 50px">
-            <h2>
-                <a>Sine Cosine and friends</a>
+                <a id='animation' href='#animation'>Moving stuff around</a>
             </h2>
             <p>
-                &#129154; What happens if we use <b>u_time</b> here?
+                Let's pass aditional uniform variable – <b>u_time</b>
+                It is a cornerstone for animation (think of flowing lava textures in games for example) and as time is a shared value between all pixels, so that makes a perfect candidate for a uniform!
+
+                <ul>
+                    <li>Try offsetting coordinate system center <b>st</b> by adding time</li>
+                    <li>Try offsetting circle center by adding time</li>
+                    <li>What if position of each pixel also affected how much time has passed for it specifically since shader program started being executed? Imagine each pixel position having it's personal clock.</li>
+                </ul>
+                <p>
+                    <div>TIP: Time makes a good candidate for sin() and cos() functions, to make looping animations!</div>
+                    <div>TIP: To make modifications to <b>u_time</b> you have to assign it to another variable and then affecting that variable!</div>
+                </p>
+
             </p>
-            <p>Sine(x)</p>
-            <div class="simpleFunction"
-                 data="y = sin(x);"></div>
-            <p>Cos(x)</p>
-             <div class="simpleFunction"
-                  data="y = cos(x);"></div>
-            <p>Tan(x)</p>
-              <div class="simpleFunction"
-                   data="y = tan(x);"></div>
-        </section>
+            <div class="editor_wrap" data="../shaders/time_1.frag" id="glsl_editor1"></div>
 
-        <section class="editor_section" style="padding-bottom: 50px">
-            <h2>
-                <a>Number games</a>
-            </h2>
-
-            <div class="simpleFunction"
-                 data="
- y = mod(x,0.5); // return x modulo of 0.5
- //y = fract(x); // return only the fraction part of a number
- //y = ceil(x);  // nearest integer that is greater than or equal to x
- //y = floor(x); // nearest integer less than or equal to x
- //y = sign(x);  // extract the sign of x
- //y = abs(x);   // return the absolute value of x
- //y = clamp(x,0.0,1.0); // constrain x to lie between 0.0 and 1.0
- //y = min(0.0,x);   // return the lesser of x and 0.0
- //y = max(0.0,x);   // return the greater of x and 0.0
-                 "></div>
-        </section>
-
-        <section class="editor_section" style="padding-bottom: 50px">
-            <h2>
-                <a>Sine and Cosine in practice</a>
-            </h2>
-
-            <div class="editor_wrap" data-size=200 data="../shaders/sin_cos_circle.frag"></div>
         </section>
     </body>
 

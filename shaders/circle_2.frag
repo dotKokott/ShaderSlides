@@ -19,8 +19,9 @@ void main() {
     
     resultingColor = coloredCircle;
 
-//   vec3 coloredSecondCircle = vec3(0.500,0.223,0.204) * isSecondCircle;
 //   float isSecondCircle = circle(vec2(0.35, 0.35), 0.25, st);
+//   vec3 coloredSecondCircle = vec3(0.500,0.223,0.204) * isSecondCircle;
+//   
 //   resultingColor = coloredCircle + coloredSecondCircle;
     
     gl_FragColor = vec4(resultingColor, 1.0);

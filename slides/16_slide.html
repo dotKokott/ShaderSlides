@@ -22,70 +22,49 @@
             </div>
         </div>
         <div id="header">
-            <h1>Expressing yourself yet?</h1>
+            <h1>Painting by Numbers</h1>
         </div>
 
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
-                <a>Unleash the beast &#20861;</a>
+                <a>Lets do this in shader style!</a>
             </h2>
 
             <p>
-                Lets take a look at some in-built shader operations and how to use them
-
+                First lets rewrite the previous example a bit more conscise using the <b>vector types</b>
                 <ul>
-                    <li>sin(), cos(), ... <em>Geometry & Waves, ja!</em></li>
-                    <li>min(), max(), mod(), fract(), floor(), ... <em>Number games</em></li>
-                    <!-- <li><a href="https://thebookofshaders.com/glossary/?search=step" target="_blank">step(float edge, float x)</a></li>
-                    <li><a href="https://thebookofshaders.com/glossary/?search=smoothstep" target="_blank">smoothstep(float edge, float x)</a></li>
-                    <li><a href="https://thebookofshaders.com/glossary/?search=mix" target="_blank">mix(float x, float y, float a)</a></li> -->
+                    <li>Use <b>vec2</b> for X / Y pairs</li>
+                    <li>Use sizzling (<b>.xy</b>) to access values</li>
                 </ul>
-            </p>
-            <div class="editor_wrap"
-                 data-size=200
-                 data="../shaders/built_in.frag"></div>
-            <p>
-                &#129154; Hint: All these operations allow you to use them on a vector directly instead of individual float values
+
+                <div class="editor_wrap"
+                     data-size=200
+                     data="../shaders/vec_and_sizzle.frag"
+                     data-solution="../shaders/vec_and_sizzle_solution.frag"></div>
             </p>
         </section>
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
-                <a>Geometry & Waves, ja</a>
+                <a>Number mashing</a>
             </h2>
 
             <p>
-                Sine and Cosine are the basic building blocks for
+                Lets tickle some of these variables and try to get other shapes
 
                 <ul>
-                    <li>Periodic movement</li>
-                    <li>Exploring geometry</li>
-                    <li>...</li>
+                    <li>Mix X and Y coordinates together?</li>
+                    <li>Different colors?</li>
                 </ul>
+
+                <div class="editor_wrap"
+                     data-size=300
+                     data="../shaders/vec_and_sizzle.frag"></div>
             </p>
-            <div class="editor_wrap"
-                 data-size=200
-                 data="../shaders/waves.frag"></div>
-        </section>
-
-        <section class="editor_section" style="padding-bottom: 50px">
-            <h2>
-                <a>Number games</a>
-            </h2>
-
             <p>
-                There are additional functions for exploring numerical spaces as
-                <ul>
-                    <li>min() / max()</li>
-                    <li>mod()</li>
-                    <li>fract()</li>
-                    <li>floor()</li>
-                </ul>
+                &#129154; Hint: In-built math operations include sin(), cos(), sqrt()...
             </p>
-            <div class="editor_wrap"
-                 data-size=200
-                 data="../shaders/number_games.frag"></div>
         </section>
     </body>
 

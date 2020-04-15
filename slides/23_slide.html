@@ -28,11 +28,11 @@
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
-                <a>Webcam!</a>
+                <a>Textures!</a>
             </h2>
 
             <p>
-                Passing textures into a shader is a very common use-case. Especially for video games.
+                Passing textures as a uniform to a shader is a very common use case. E.g. rendering the material of an object using an image.
                 <ul>
                     <li>Datatype for a texture is <b>sampler2D</b></li>
                     <li>To look up a texture us the <b>texture2D()</b> function</li>
@@ -40,7 +40,7 @@
             </p>
 
             <!-- <div class="editor_wrap" data-size=300 data-webcam data="../shaders/webcam_01.frag" data-solution="../shaders/webcam_01_solution.frag"></div> -->
-            <div class="editor_wrap" data-size=300  data="../shaders/webcam_01.frag" data-solution="..shaders/webcam_01_solution.frag" data-webcam></div>
+            <div class="editor_wrap" data-size=300  data="../shaders/webcam_01.frag" data-textures="https://upload.wikimedia.org/wikipedia/commons/b/b5/800x600_Wallpaper_Blue_Sky.png"></div>
         </section>
 
         <section class="editor_section" style="padding-bottom: 50px">
@@ -49,14 +49,18 @@
             </h2>
 
             <p>
-                Lets use everything we know to remix our face!
+                Lets use everything we know to mess with this image!
             </p>
 
-            <div class="editor_wrap" data-size=300 data-webcam data="../shaders/webcam_01.frag"></div>
+            <div class="editor_wrap" data-size=300 data="../shaders/webcam_01.frag" data-textures="https://upload.wikimedia.org/wikipedia/commons/b/b5/800x600_Wallpaper_Blue_Sky.png"></div>
 
             <p>
                 &#129154; <a target="_blank" href="funky_shaders.html">Here is a collections of funky random shaders for inspiration</a>
             </p>
+            <p>
+                &#129154; <a target="_blank" href="https://gl-transitions.com/gallery">Collection of fun shader transitions to try</a>                
+            </p>
+            
         </section>
 
     </body>

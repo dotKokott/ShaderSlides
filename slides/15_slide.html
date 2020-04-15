@@ -22,49 +22,59 @@
             </div>
         </div>
         <div id="header">
-            <h1>Painting by Numbers</h1>
+            <h1>Unit circle</h1>
         </div>
 
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
-                <a>Lets do this in shader style!</a>
+                <a>From the unit circle to chaos</a>
             </h2>
 
             <p>
-                First lets rewrite the previous example a bit more conscise using the <b>vector types</b>
-                <ul>
-                    <li>Use <b>vec2</b> for X / Y pairs</li>
-                    <li>Use sizzling (<b>.xy</b>) to access values</li>
-                </ul>
-
-                <div class="editor_wrap"
-                     data-size=200
-                     data="../shaders/vec_and_sizzle.frag"
-                     data-solution="../shaders/vec_and_sizzle.frag"></div>
+                The <b>Unit Circle</b> is a circle with a radius of <b>1.0</b> and positioned at the (0, 0) of the coordinate system
             </p>
+
+            <iframe src="https://www.mathsisfun.com/algebra/icircle-triangle.html" scrolling="no" style="width:442px; height:542px; overflow:hidden; margin:auto; display:block; border: none;"></iframe>
+
+
         </section>
 
         <section class="editor_section" style="padding-bottom: 50px">
             <h2>
-                <a>Number mashing</a>
+                <a>Sine Cosine and friends</a>
+            </h2>
+            <p>
+                &#129154; What happens if we use <b>u_time</b> here?
+            </p>
+            <p>Sine(x)</p>
+            <div class="simpleFunction"
+                 data="y = sin(x);"></div>
+            <p>Cos(x)</p>
+             <div class="simpleFunction"
+                  data="y = cos(x);"></div>
+            <p>Tan(x)</p>
+              <div class="simpleFunction"
+                   data="y = tan(x);"></div>
+        </section>
+
+        <section class="editor_section" style="padding-bottom: 50px">
+            <h2>
+                <a>Number games</a>
             </h2>
 
-            <p>
-                Lets tickle some of these variables and try to get other shapes
-
-                <ul>
-                    <li>Mix X and Y coordinates together?</li>
-                    <li>Different colors?</li>
-                </ul>
-
-                <div class="editor_wrap"
-                     data-size=300
-                     data="../shaders/vec_and_sizzle.frag"></div>
-            </p>
-            <p>
-                &#129154; Hint: In-built math operations include sin(), cos(), sqrt()...
-            </p>
+            <div class="simpleFunction"
+                 data="
+ y = mod(x,0.5); // return x modulo of 0.5
+ //y = fract(x); // return only the fraction part of a number
+ //y = ceil(x);  // nearest integer that is greater than or equal to x
+ //y = floor(x); // nearest integer less than or equal to x
+ //y = sign(x);  // extract the sign of x
+ //y = abs(x);   // return the absolute value of x
+ //y = clamp(x,0.0,1.0); // constrain x to lie between 0.0 and 1.0
+ //y = min(0.0,x);   // return the lesser of x and 0.0
+ //y = max(0.0,x);   // return the greater of x and 0.0
+                 "></div>
         </section>
     </body>
 
