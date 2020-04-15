@@ -13,17 +13,17 @@ function loadEditor(selector, size, useWebcam, fragSource, solutionSource) {
         imgs: ['https://upload.wikimedia.org/wikipedia/commons/b/b5/800x600_Wallpaper_Blue_Sky.png']
     });
 
-    var saveIcon = document.createElement("div");
-    saveIcon.innerHTML = "&#128190;"
-    saveIcon.classList.add('save_icon');
+    // var saveIcon = document.createElement("div");
+    // saveIcon.innerHTML = "&#128190;"
+    // saveIcon.classList.add('save_icon');
 
-    selector.append(saveIcon);
+    // selector.append(saveIcon);
 
-    $(saveIcon).click(function() {
-        window.saveOnServer(editor, function(event) {
-             prompt('Use this url to share your code', 'http://thebookofshaders.com/edit.php?log=' + event.name);
-        })
-    })
+    // $(saveIcon).click(function() {
+    //     window.saveOnServer(editor, function(event) {
+    //          prompt('Use this url to share your code', 'http://thebookofshaders.com/edit.php?log=' + event.name);
+    //     })
+    // })
 
 
 
